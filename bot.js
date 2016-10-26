@@ -29,6 +29,7 @@ request.get(quoteApi, function(err, res, body){
     let info = JSON.parse(body);
     var fullquote = info.quote + " - " + info.author;
     var author = info.author;
+    console.log(fullquote);
     if (fullquote.length > 140) throw new Error('too long');
     var quoteArr = info.quote.split(" ");
     var wordToAlter = Math.floor(Math.random() * (quoteArr.length + 1));
@@ -43,9 +44,9 @@ request.get(quoteApi, function(err, res, body){
 
     request.get(word, function(err, res, body){
         let info = JSON.parse(body);
-        console.log(info.rhymes);
-        console.log(info.rhymes.all);
-        if (info.rhymes.all){
+        // console.log(info.rhymes);
+        console.log(info.rhymes.all[0]);
+        if (info.rhymes.all[0]){
             var rhymeToReplace = Math.floor(Math.random() * (info.rhymes.all.length + 1));
             quoteArr[wordToAlter] = info.rhymes.all[rhymeToReplace];
             var finalQuote = quoteArr.join(" ") + " - " + author;
