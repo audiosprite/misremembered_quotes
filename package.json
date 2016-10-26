@@ -1,0 +1,16 @@
+{
+  "name": "almostquote",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-twitter": "^0.5.3",
+    "request": "^2.76.0",
+    "twit": "^2.2.5"
+  }
+}
